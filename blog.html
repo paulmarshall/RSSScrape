@@ -888,7 +888,7 @@
 					<div class="grid-container masonry">
 						<div class="row">
 							<div class="column width-12">
-								<div id="blog-container" class="row grid content-grid-3 clearfix">
+								<div class="row grid content-grid-3 clearfix">
 								</div>
 							</div>
 						</div>
@@ -985,14 +985,27 @@
 		$(function() {
 		//var url = 'http://meowblog.cats.org.uk/feeds/posts/default'
 		var url = "http://feeds.bbci.co.uk/sport/football/rss.xml?edition=uk";
+		var $container = $(".grid");
 		feednami.load(url,function(result){
 			if(result.error){
-			  console.log(result.error)
+			    var $warning = $("<div class='grid-item' >" +
+										"<article class='post'>" +
+											"<div class='post-content box xlarge bkg-theme color-white'>" +
+												"<blockquote class='left icon'>" +
+													"<span class='icon-quote'></span>" +
+													"<p><em>Hmm, that doesn't look good Jim.</em>" +
+														"<cite>Scotty</cite>" +
+													"</p>" +
+												"</blockquote>" +
+												"<h2 class='post-title'><a href='blog-single-post-sidebar-right.html'>Sorry, something went wrong retrieving the feed. Maybe it's gone to bed?</a></h2>" +
+											"</div>" +
+										"</article>" +
+									"</div>");
+
+			    $container.append($warning);
 			}
 			else{
 			  var entries = result.feed.entries;
-
-			  var $container = 	$("#blog-container");
 
 			  for(var i = 0; i < entries.length; i++){
 			    var entry = entries[i];
@@ -1032,15 +1045,12 @@
 									"</div>");
 
 			    $container.append($post);
-
 			  }
-			  $('.grid').isotope({
-				  masonry: {
-				    // use element for option
-				    columnWidth: '.grid-sizer'
-				  }
-				});
 			}
+
+		  // reset masonry UX	
+		  $container.isotope();
+
 			});
 		});
 
