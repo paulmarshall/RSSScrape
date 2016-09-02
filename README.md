@@ -3,6 +3,7 @@
 ## What ?
 ```
 Feature: Consume a RSS feed from site A and present onto site B.
+
 Given that I have no pussy on my web site
 When I consume a atom/rss feed about pussy from the following source
 | Blog Url                           |
@@ -12,6 +13,10 @@ And I visit a page on my web site in the style of
 | http://sartre.thememountain.com/blog.html |
 Then I see a blog about pussy on my web site
 ```
+
+## Where ?
+Demo at https://dl.dropboxusercontent.com/u/10465571/Retig/RSSScrape/blog.html
+
 ## How ?
 1. Create "Public" DropBox folders
 2. Saved contents of "http://sartre.thememountain.com/blog.html" locally. (Manually added font file as Chrome Save feature not as good as it thinks :-))
