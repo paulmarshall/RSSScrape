@@ -19,17 +19,16 @@ Demo at https://dl.dropboxusercontent.com/u/10465571/Retig/RSSScrape/blog.html
 
 ## How ?
 1. Create "Public" DropBox folders
-2. Saved contents of "http://sartre.thememountain.com/blog.html" locally. (Manually added font file as Chrome Save feature not as good as it thinks :-))
+2. Saved contents of `http://sartre.thememountain.com/blog.html` locally. (Manually added font file as Chrome Save feature not as good as it thinks :-))
 3. Created a GitHub repository, sync'd to DropBox folder
-4. Add references in blog.html to:
+4. Add CDN references in blog.html to:
  * Javascript RSS feed client (https://github.com/sekando/feednami-client)
  * Date formatting library (https://github.com/moment/moment)
-5. Modified blog.html to include feednami-client 
-6. Removed ".grid-item" elements from blog.html
-7. Added script in blog.html to consume feed, and append blog entries, replacing key data parts. (The CSS class `grid-sizer is important to the styling of the original blog page so was added.)
-8. Re-call isotope to reset grid.
-9. Add a warning message if feednami-client fails to load the feed.
-10. Sync Dropbox folder to GitHub
+5. Removed `.grid-item` elements from `blog.html`
+6. Added script in `blog.html` to consume feed, and append blog entries, replacing key data parts. (The CSS class `grid-sizer` is important to the styling of the original blog page so was added - in the original theme it appeared for on every 6th entry.)
+7. Re-call `isotope` to reset grid.
+8. Add a warning message if feednami-client fails to load the feed.
+9. Sync Dropbox folder to GitHub
 
 Worth nothing:
 * Like button - I've left the "like" link (and display of likes)
