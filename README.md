@@ -24,7 +24,7 @@ Demo at https://dl.dropboxusercontent.com/u/10465571/Retig/RSSScrape/blog.html
 4. Add CDN references in blog.html to:
  * Javascript RSS feed client (https://github.com/sekando/feednami-client)
  * Date formatting library (https://github.com/moment/moment)
-5. Removed `.grid-item` elements from `blog.html`
+5. Removed the after-effects of the isotope plugin + removed `.grid-item` elements from `blog.html`
 6. Added script in `blog.html` to consume feed, and append blog entries, replacing key data parts. (The CSS class `grid-sizer` is important to the styling of the original blog page so was added - in the original theme it appeared for on every 6th entry.)
 7. Re-call `isotope` to reset grid.
 8. Add a warning message if feednami-client fails to load the feed.
